@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
           >
             <Code className="text-blue-400" size={24} />
             <h2 className="text-xl md:text-2xl text-gray-300">
-              Développeuse Mobile & Web Full-Stack | Community Manager
+              Développeur Mobile & Web Full-Stack | Community Manager
             </h2>
             <Smartphone className="text-purple-400" size={24} />
           </motion.div>
