@@ -14,12 +14,13 @@ export const Experience: React.FC = () => {
       location: "Madagascar",
       type: "CDI",
       achievements: [
+        "Designer UI/UX & création de visuels",
         "Développement de modules de paiement sécurisés",
         "Création d'applications web et mobile avec React et React Native",
         "Intégration avec PrestaShop et bases de données PostgreSQL",
-        "Développement des sites ITM & FIA&FIG pour inscription et réservation d'exposants"
+        "Développement des sites ITM & FIA&FIG pour inscription et réservation d'exposants",
       ],
-      technologies: ["React", "React Native", "Node.js", "PostgreSQL", "PrestaShop"],
+      technologies: ["React", "React Native", "Node.js", "PostgreSQL", "PrestaShop","EJS","Symfony","Figma","Adobe Illustrator","Photoshop","Symfony"],
       color: "from-blue-500 to-purple-500"
     },
     {
@@ -34,7 +35,7 @@ export const Experience: React.FC = () => {
         "Animation de communautés en ligne",
         "Augmentation significative de l'engagement et de la visibilité"
       ],
-      technologies: ["Social Media", "Content Creation", "Digital Marketing"],
+      technologies: ["Social Media", "Content Creation", "Digital Marketing","Photoshop"],
       color: "from-green-500 to-teal-500"
     },
     {
@@ -55,7 +56,7 @@ export const Experience: React.FC = () => {
     {
       company: "Ascendio",
       position: "Secrétaire de séance",
-      period: "2021 - 2022",
+      period: "2022",
       location: "Madagascar",
       type: "Stage",
       achievements: [
@@ -64,7 +65,7 @@ export const Experience: React.FC = () => {
         "Gestion administrative et support organisationnel",
         "Développement de compétences en communication professionnelle"
       ],
-      technologies: ["Administration", "Organization", "Communication"],
+      technologies: ["Administration", "Organisation", "Communication"],
       color: "from-orange-500 to-red-500"
     }
   ];

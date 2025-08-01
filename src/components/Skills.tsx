@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Code, Palette, Database, Smartphone, Globe, Settings } from 'lucide-react';
+import { Code, Palette, Database, Smartphone, Globe, Settings, Wrench } from 'lucide-react';
 
 export const Skills: React.FC = () => {
   const ref = useRef(null);
@@ -9,39 +9,45 @@ export const Skills: React.FC = () => {
   const skillCategories = [
     {
       icon: <Code className="w-8 h-8" />,
-      title: "Langages",
+      title: "Programmation",
       color: "from-blue-500 to-cyan-500",
-      skills: ["JavaScript", "TypeScript", "PHP", "HTML5", "CSS3"]
+      skills: ["JavaScript", "TypeScript","PHP"]
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: "Front-end",
+      title: "Developpement Web",
       color: "from-purple-500 to-pink-500",
-      skills: ["ReactJS", "Tailwind CSS", "HTML", "CSS", "Responsive Design"]
+      skills: ["ReactJS", "Tailwind CSS", "HTML", "CSS" ,"EJS","Symfony"]
     },
     {
       icon: <Settings className="w-8 h-8" />,
       title: "Back-end",
       color: "from-green-500 to-teal-500",
-      skills: ["Node.js", "ExpressJS", "Symfony", "API REST", "Authentication"]
+      skills: ["Node.js", "ExpressJS", "Symfony", "API REST"]
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "Mobile",
+      title: "Developpement Mobile",
       color: "from-orange-500 to-red-500",
-      skills: ["React Native", "PWA", "Mobile-First", "Cross-Platform"]
+      skills: ["React Native", "PWA","Expo", "Mobile-First Design", ]
     },
     {
       icon: <Database className="w-8 h-8" />,
       title: "Bases de données",
       color: "from-indigo-500 to-blue-500",
-      skills: ["PostgreSQL", "MongoDB", "Database Design", "Data Modeling"]
+      skills: ["PostgreSQL", "MongoDB","Sequelize"]
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "Design",
       color: "from-pink-500 to-rose-500",
       skills: ["Figma", "Photoshop", "Illustrator", "UI/UX", "Prototyping"]
+    },
+    {
+      icon: <Wrench className="w-8 h-8" />,
+      title: "Outils de développement",
+      color: "from-gray-500 to-zinc-500",
+      skills: ["Git", "GitLab", "VSCode", "Postman", "PgAdmin"]
     }
   ];
 
@@ -69,13 +75,14 @@ export const Skills: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800 hover:border-gray-600 transition-all duration-300 hover:scale-105"
               >
-                <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${category.color} rounded-lg mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <div className="text-white">
-                    {category.icon}
+                <div className="flex items-center mb-6">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${category.color} rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {category.icon}
+                    </div>
                   </div>
+                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
                 </div>
-
-                <h3 className="text-2xl font-bold mb-6 text-white">{category.title}</h3>
 
                 <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
