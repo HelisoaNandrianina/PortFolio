@@ -54,11 +54,13 @@ export const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="relative">
-                <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
-                  <div className="w-72 h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center">
-                    <span className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                      NR
-                    </span>
+                <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center p-2">
+                  <div className="w-72 h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full overflow-hidden flex items-center justify-center p-2">
+                    <img
+                      src="../../assets/image/photo_CV.jpeg" // Remplacez par le chemin vers votre photo
+                      alt="Photo de profil"
+                      className="w-full h-full object-cover rounded-full"
+                    />
                   </div>
                 </div>
               </div>
