@@ -41,7 +41,16 @@ export const Projects: React.FC = () => {
       title: "OWAYZZ",
       description: "Réseau social et marketplace touristique pour découvrir et partager les destinations de Madagascar",
       image: "../../assets/logo/logo_orange_horizontale.png",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      technologies: ["React", "Node.js", "MongoDB","PostgreSQL", "Express"],
+      category: ["Web", "Full-Stack"],
+      features: ["Réseau social", "Marketplace", "Tourisme", "Paiement en ligne"],
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "B2B",
+      description: "Plateforme B2B (Business to Business) dédiée aux événements professionnels, offrant un agenda interactif pour la prise de rendez-vous entre participants, un système de messagerie instantanée pour faciliter les échanges en ligne.",
+      image: "../../assets/logo/logoB2B.png",
+      technologies: ["React", "Node.js", "PostgreSQL", "Express"],
       category: ["Web", "Full-Stack"],
       features: ["Réseau social", "Marketplace", "Tourisme", "Paiement en ligne"],
       color: "from-purple-500 to-pink-500"
@@ -70,7 +79,6 @@ export const Projects: React.FC = () => {
       features: ["Inscription", "Paiement", "Dashboard", "Admin Panel"],
       color: "from-indigo-500 to-blue-500"
     },
-
     {
       title: "Vanilla Pay Integration",
       description: "Modules de paiement sécurisés pour e-commerce avec intégration PrestaShop",
