@@ -58,7 +58,7 @@ export const Projects: React.FC = () => {
     {
       title: "Madavision Platform",
       description: "Plateforme complète comprenant une inscription, un back-office pour les administrateurs, et un espace exposant pour la gestion des commandes et des paiements.",
-      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+      image: "../../assets/logo/logo_madavision.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
       category: ["Web", "Full-Stack"],
       features: [
@@ -73,7 +73,7 @@ export const Projects: React.FC = () => {
     {
       title: "ITM  Platform",
       description: "Plateforme complète comprenant une inscription, un back-office pour les administrateurs, et un espace exposant pour la gestion des commandes et des paiements.",
-      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+      image: "../../assets/logo/itm.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
       category: ["Web", "Full-Stack"],
       features: ["Inscription", "Paiement", "Dashboard", "Admin Panel"],
@@ -82,7 +82,7 @@ export const Projects: React.FC = () => {
     {
       title: "Vanilla Pay Integration",
       description: "Modules de paiement sécurisés pour e-commerce avec intégration PrestaShop",
-      image: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg",
+      image: "../../assets/logo/logo_vpi.png",
       technologies: ["PrestaShop", "PHP", "PostgreSQL", "API"],
       category: ["Web", "Full-Stack"],
       features: ["Paiement sécurisé", "E-commerce", "API Integration", "Security"],
