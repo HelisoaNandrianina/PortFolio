@@ -7,31 +7,31 @@ export const Projects: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeFilter, setActiveFilter] = useState('Tous');
 
-  const filters = ['Tous', 'Web', 'Mobile', 'Full-Stack', 'PWA'];
+  const filters = ['Tous', 'Web', 'Mobile', 'Full-Stack'];
 
   const projects = [
     {
       title: "Tanàna Clean",
-      description: "Application de vente de produits recyclés avec système de géolocalisation et paiement intégré",
-      image: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg",
-      technologies: ["PHP", "JavaScript", "PWA", "MySQL"],
+      description: "Plateforme e-commerce dédiée à la vente de produits recyclés, avec un back-office pour la gestion des utilisateurs et des produits.",
+      image: "../../assets/image/logfaranytenaizy.png",
+      technologies: ["PHP", "JavaScript", "PWA", "MySQL","CSS","HTML"],
       category: ["Web", "PWA"],
-      features: ["E-commerce", "Géolocalisation", "Recyclage", "Responsive"],
+      features: ["E-commerce", "Back Office", "Recyclage", "Responsive"],
       color: "from-green-500 to-teal-500"
     },
     {
       title: "M-APP-AHAY",
-      description: "Application mobile de révision scolaire avec système de quiz interactifs et suivi de progression",
-      image: "https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg",
-      technologies: ["JavaScript", "PWA", "LocalStorage"],
+      description: "Application mobile de révision scolaire avec système de quiz interactifs",
+      image: "../../assets/logo/logomappahay.png",
+      technologies: ["JavaScript", "PWA", "LocalStorage","HTML","CSS"],
       category: ["Mobile", "PWA"],
-      features: ["Quiz interactifs", "Suivi progression", "Offline", "Gamification"],
+      features: ["Quiz interactifs", "Offline"],
       color: "from-blue-500 to-purple-500"
     },
     {
       title: "Dôla - Jeux Malgaches",
       description: "Plateforme web dédiée aux jeux traditionnels malgaches (Fanorona, Katro) avec multijoueur en ligne",
-      image: "https://images.pexels.com/photos/163064/play-stone-network-networked-163064.jpeg",
+      image: "../../assets/logo/logo_dola.jpg",
       technologies: ["JavaScript", "WebSocket", "HTML5", "CSS3"],
       category: ["Web", "Full-Stack"],
       features: ["Multijoueur", "Jeux traditionnels", "Real-time", "Responsive"],
@@ -40,21 +40,37 @@ export const Projects: React.FC = () => {
     {
       title: "OWAYZZ",
       description: "Réseau social et marketplace touristique pour découvrir et partager les destinations de Madagascar",
-      image: "https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg",
+      image: "../../assets/logo/logo_orange_horizontale.png",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
       category: ["Web", "Full-Stack"],
-      features: ["Réseau social", "Marketplace", "Tourisme", "Géolocalisation"],
+      features: ["Réseau social", "Marketplace", "Tourisme", "Paiement en ligne"],
       color: "from-purple-500 to-pink-500"
     },
     {
-      title: "ITM & FIA&FIG Platform",
-      description: "Plateforme d'inscription et réservation pour exposants avec gestion des paiements",
+      title: "Madavision Platform",
+      description: "Plateforme complète comprenant une inscription, un back-office pour les administrateurs, et un espace exposant pour la gestion des commandes et des paiements.",
+      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+      technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
+      category: ["Web", "Full-Stack"],
+      features: [
+        "Inscription",
+        "Paiement",
+        "Dashboard",
+        "Admin Panel",
+        "Espace Exposant"
+      ],
+      color: "fr"
+    },
+    {
+      title: "ITM  Platform",
+      description: "Plateforme complète comprenant une inscription, un back-office pour les administrateurs, et un espace exposant pour la gestion des commandes et des paiements.",
       image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
       category: ["Web", "Full-Stack"],
       features: ["Inscription", "Paiement", "Dashboard", "Admin Panel"],
       color: "from-indigo-500 to-blue-500"
     },
+
     {
       title: "Vanilla Pay Integration",
       description: "Modules de paiement sécurisés pour e-commerce avec intégration PrestaShop",
