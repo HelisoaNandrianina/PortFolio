@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
     { href: '#accueil', label: 'Accueil' },
     { href: '#apropos', label: 'À propos' },
     { href: '#competences', label: 'Compétences' },
-    { href: '#experience', label: 'Expérience' },
+    { href: '#experience', label: 'Expériences' },
     { href: '#formation', label: 'Education' },
     { href: '#projets', label: 'Projets' },
     { href: '#contact', label: 'Contact' }

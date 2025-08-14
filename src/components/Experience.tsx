@@ -81,7 +81,7 @@ export const Experience: React.FC = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Expérience Professionnelle
+              Expériences Professionnelles
             </span>
           </h2>
 
