@@ -57,7 +57,7 @@ export const About: React.FC = () => {
                 <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center p-2">
                   <div className="w-72 h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full overflow-hidden flex items-center justify-center p-2">
                     <img
-                      src="../../public/image/photo_CV.jpeg" // Remplacez par le chemin vers votre photo
+                      src="/image/photo_CV.jpeg" // Remplacez par le chemin vers votre photo
                       alt="Photo de profil"
                       className="w-full h-full object-cover rounded-full"
                     />

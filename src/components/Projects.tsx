@@ -13,7 +13,7 @@ export const Projects: React.FC = () => {
     {
       title: "Tanàna Clean",
       description: "Plateforme e-commerce dédiée à la vente de produits recyclés, avec un back-office pour la gestion des utilisateurs et des produits.",
-      image: "../../public/image/logfaranytenaizy.png",
+      image: "/image/logfaranytenaizy.png",
       technologies: ["PHP", "JavaScript", "PWA", "MySQL","CSS","HTML"],
       category: ["Web", "PWA"],
       type: "Projet Académique",
@@ -23,7 +23,7 @@ export const Projects: React.FC = () => {
     {
       title: "M-APP-AHAY",
       description: "Application mobile de révision scolaire avec système de quiz interactifs",
-      image: "../../public/logo/mappahay.png",
+      image: "/logo/mappahay.png",
       technologies: ["JavaScript", "PWA", "LocalStorage","HTML","CSS"],
       category: ["Mobile", "PWA"],
       type: "Projet Académique",
@@ -33,7 +33,7 @@ export const Projects: React.FC = () => {
     {
       title: "Dôla - Jeux Malgaches",
       description: "Plateforme web dédiée aux jeux traditionnels malgaches (Fanorona, Katro) avec multijoueur en ligne",
-      image: "../../public/logo/logo_dola.png",
+      image: "/logo/logo_dola.png",
       technologies: ["JavaScript", "WebSocket", "HTML5", "CSS3"],
       category: ["Web", "Full-Stack"],
       type: "Projet Académique",
@@ -43,7 +43,7 @@ export const Projects: React.FC = () => {
     {
       title: "OWAYZZ",
       description: "Réseau social et marketplace touristique pour découvrir et partager les destinations de Madagascar",
-      image: "../../public/logo/logo_orange_horizontale.png",
+      image: "/logo/logo_orange_horizontale.png",
       technologies: ["React", "Node.js", "MongoDB","PostgreSQL", "Express"],
       category: ["Mobile"],
       type: "Expérience Professionnel",
@@ -53,7 +53,7 @@ export const Projects: React.FC = () => {
     {
       title: "B2B",
       description: "Plateforme B2B (Business to Business) dédiée aux événements professionnels, offrant un agenda interactif pour la prise de rendez-vous entre participants, un système de messagerie instantanée pour faciliter les échanges en ligne.",
-      image: "../../public/logo/logoB2B.png",
+      image: "/logo/logoB2B.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Express"],
       category: ["Mobile"],
       type: "Expérience Professionnel",
@@ -63,7 +63,7 @@ export const Projects: React.FC = () => {
     {
       title: "Madavision Platform",
       description: "Plateforme complète comprenant une inscription, un back-office pour les administrateurs, et un espace exposant pour la gestion des commandes et des paiements.",
-      image: "../../public/logo/logo_madavision.png",
+      image: "/logo/logo_madavision.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
       category: ["Web", "Full-Stack"],
       type: "Expérience Professionnel",
@@ -79,7 +79,7 @@ export const Projects: React.FC = () => {
     {
       title: "ITM Platform",
       description: "Plateforme complète comprenant une inscription, un back-office pour les administrateurs, et un espace exposant pour la gestion des commandes et des paiements.",
-      image: "../../public/logo/itm.png",
+      image: "/logo/itm.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
       category: ["Web", "Full-Stack"],
       type: "Expérience Professionnel",
@@ -89,7 +89,7 @@ export const Projects: React.FC = () => {
     {
       title: "Vanilla Pay Integration",
       description: "Intégration de modules de paiement sécurisés",
-      image: "../../public/logo/logo_vpi.png",
+      image: "/logo/logo_vpi.png",
       technologies: ["Symfony", "PHP", "API"],
       category: ["Web", "Mobile","Full-Stack"],
       type: "Expérience Professionnel",
