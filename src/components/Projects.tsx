@@ -148,7 +148,6 @@ export const Projects: React.FC = () => {
                       <ExternalLink className="w-4 h-4 text-white" />
                     </button>
                     <button className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors duration-300">
-                      <Github className="w-4 h-4 text-white" />
                     </button>
                   </div>
                 </div>
