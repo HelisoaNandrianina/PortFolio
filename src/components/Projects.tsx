@@ -7,7 +7,7 @@ export const Projects: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeFilter, setActiveFilter] = useState('Tous');
 
-  const filters = ['Tous', 'Web', 'Mobile', 'Full-Stack'];
+  const filters = ['Tous', 'Web', 'Mobile'];
 
   const projects = [
     {
@@ -16,6 +16,7 @@ export const Projects: React.FC = () => {
       image: "../../assets/image/logfaranytenaizy.png",
       technologies: ["PHP", "JavaScript", "PWA", "MySQL","CSS","HTML"],
       category: ["Web", "PWA"],
+      type: "Projet Académique",
       features: ["E-commerce", "Back Office", "Recyclage", "Responsive"],
       color: "from-green-500 to-teal-500"
     },
@@ -25,6 +26,7 @@ export const Projects: React.FC = () => {
       image: "../../assets/logo/mappahay.png",
       technologies: ["JavaScript", "PWA", "LocalStorage","HTML","CSS"],
       category: ["Mobile", "PWA"],
+      type: "Projet Académique",
       features: ["Quiz interactifs", "Offline"],
       color: "from-blue-500 to-purple-500"
     },
@@ -34,6 +36,7 @@ export const Projects: React.FC = () => {
       image: "../../assets/logo/logo_dola.png",
       technologies: ["JavaScript", "WebSocket", "HTML5", "CSS3"],
       category: ["Web", "Full-Stack"],
+      type: "Projet Académique",
       features: ["Multijoueur", "Jeux traditionnels", "Real-time", "Responsive"],
       color: "from-orange-500 to-red-500"
     },
@@ -42,7 +45,8 @@ export const Projects: React.FC = () => {
       description: "Réseau social et marketplace touristique pour découvrir et partager les destinations de Madagascar",
       image: "../../assets/logo/logo_orange_horizontale.png",
       technologies: ["React", "Node.js", "MongoDB","PostgreSQL", "Express"],
-      category: ["Web", "Full-Stack"],
+      category: ["Mobile"],
+      type: "Expérience Professionnel",
       features: ["Réseau social", "Marketplace", "Tourisme", "Paiement en ligne"],
       color: "from-purple-500 to-pink-500"
     },
@@ -51,7 +55,8 @@ export const Projects: React.FC = () => {
       description: "Plateforme B2B (Business to Business) dédiée aux événements professionnels, offrant un agenda interactif pour la prise de rendez-vous entre participants, un système de messagerie instantanée pour faciliter les échanges en ligne.",
       image: "../../assets/logo/logoB2B.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Express"],
-      category: ["Web", "Full-Stack"],
+      category: ["Mobile"],
+      type: "Expérience Professionnel",
       features: ["Réseau social", "Marketplace", "Tourisme", "Paiement en ligne"],
       color: "from-purple-500 to-pink-500"
     },
@@ -61,6 +66,7 @@ export const Projects: React.FC = () => {
       image: "../../assets/logo/logo_madavision.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
       category: ["Web", "Full-Stack"],
+      type: "Expérience Professionnel",
       features: [
         "Inscription",
         "Paiement",
@@ -76,15 +82,17 @@ export const Projects: React.FC = () => {
       image: "../../assets/logo/itm.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
       category: ["Web", "Full-Stack"],
+      type: "Expérience Professionnel",
       features: ["Inscription", "Paiement", "Dashboard", "Admin Panel"],
       color: "from-indigo-500 to-blue-500"
     },
     {
       title: "Vanilla Pay Integration",
-      description: "Modules de paiement sécurisés pour e-commerce avec intégration PrestaShop",
+      description: "Intégration de modules de paiement sécurisés",
       image: "../../assets/logo/logo_vpi.png",
-      technologies: ["PrestaShop", "PHP", "PostgreSQL", "API"],
-      category: ["Web", "Full-Stack"],
+      technologies: ["Symfony", "PHP", "API"],
+      category: ["Web", "Mobile","Full-Stack"],
+      type: "Expérience Professionnel",
       features: ["Paiement sécurisé", "E-commerce", "API Integration", "Security"],
       color: "from-teal-500 to-green-500"
     }
@@ -159,13 +167,22 @@ export const Projects: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   
-
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all duration-300">
-                    {project.title}
-                  </h3>
+                  {/* Titre avec badge type à côté */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all duration-300">
+                      {project.title}
+                    </h3>
+                    <span className={`px-2 py-1 text-xs font-medium rounded-full flex-shrink-0 ${
+                      project.type === 'Académique' 
+                        ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' 
+                        : 'bg-purple-500/20 text-purple-300 border border-purple-500/30'
+                    }`}>
+                      {project.type}
+                    </span>
+                  </div>
                   
                   <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
                     {project.description}
@@ -180,9 +197,9 @@ export const Projects: React.FC = () => {
                         {feature}
                       </span>
                     ))}
-                    {project.features.length > 3 && (
+                    {project.features.length > 5 && (
                       <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-full">
-                        +{project.features.length - 3}
+                        +{project.features.length - 5}
                       </span>
                     )}
                   </div>
@@ -191,18 +208,14 @@ export const Projects: React.FC = () => {
                     {project.technologies.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
-                        className={`px-3 py-1 bg-gradient-to-r ${project.color} bg-opacity-20 border border-current rounded-full text-xs font-medium`}
-                        style={{ 
-                          borderImage: `linear-gradient(to right, var(--tw-gradient-stops)) 1`,
-                          color: '#60a5fa' 
-                        }}
+                        className={`px-3 py-1 bg-gradient-to-r ${project.color} bg-opacity-10 text-white rounded-full text-xs font-medium border border-white/20 backdrop-blur-sm`}
                       >
                         {tech}
                       </span>
                     ))}
-                    {project.technologies.length > 4 && (
-                      <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs font-medium">
-                        +{project.technologies.length - 4}
+                    {project.technologies.length > 7 && (
+                      <span className="px-3 py-1 bg-gray-700/50 text-gray-300 rounded-full text-xs font-medium border border-gray-600/50">
+                        +{project.technologies.length - 7}
                       </span>
                     )}
                   </div>
