@@ -8,18 +8,12 @@ export const Education: React.FC = () => {
 
   const education = [
     {
-      institution: "ISPM (Institut Supérieur Polytechnique de Madagascar)",
-      degree: "Licence en Informatique",
-      field: "Développement Web et Mobile",
-      period: "2020 - 2023",
+      institution: "Institut Supérieur Polytechnique de Madagascar",
+      degree: "Licence en Informatique et Télécommunication",
+      field: "Parcours : Informatique de Gestion, Génie Logiciel et Intelligence Artificielle",
+      period: "2021 - 2024",
       location: "Antananarivo, Madagascar",
       type: "Diplôme",
-      achievements: [
-        "Spécialisation en développement full-stack",
-        "Projets académiques en React et Node.js",
-        "Formation aux méthodologies agiles",
-        "Mémoire sur les applications web progressives (PWA)"
-      ],
       skills: ["JavaScript", "PHP", "Base de données", "Gestion de projet"],
       color: "from-blue-500 to-purple-500",
       icon: <GraduationCap className="w-6 h-6" />
@@ -31,44 +25,38 @@ export const Education: React.FC = () => {
       period: "2017 - 2020",
       location: "Madagascar",
       type: "Diplôme",
-      achievements: [
-        "Mention Bien",
-        "Spécialisation en mathématiques et sciences",
-        "Initiation à la programmation",
-        "Projets techniques et scientifiques"
-      ],
       skills: ["Mathématiques", "Sciences", "Logique", "Analyse"],
       color: "from-green-500 to-teal-500",
       icon: <BookOpen className="w-6 h-6" />
     }
   ];
 
-  const certifications = [
-    {
-      name: "React Development",
-      issuer: "Formation en ligne",
-      year: "2023",
-      color: "from-blue-400 to-cyan-400"
-    },
-    {
-      name: "Node.js & Express",
-      issuer: "Formation professionnelle",
-      year: "2023",
-      color: "from-green-400 to-emerald-400"
-    },
-    {
-      name: "React Native",
-      issuer: "Auto-formation",
-      year: "2024",
-      color: "from-purple-400 to-pink-400"
-    },
-    {
-      name: "UI/UX Design",
-      issuer: "Figma & Adobe",
-      year: "2022",
-      color: "from-orange-400 to-red-400"
-    }
-  ];
+  // const certifications = [
+  //   {
+  //     name: "React Development",
+  //     issuer: "Formation en ligne",
+  //     year: "2023",
+  //     color: "from-blue-400 to-cyan-400"
+  //   },
+  //   {
+  //     name: "Node.js & Express",
+  //     issuer: "Formation professionnelle",
+  //     year: "2023",
+  //     color: "from-green-400 to-emerald-400"
+  //   },
+  //   {
+  //     name: "React Native",
+  //     issuer: "Auto-formation",
+  //     year: "2024",
+  //     color: "from-purple-400 to-pink-400"
+  //   },
+  //   {
+  //     name: "UI/UX Design",
+  //     issuer: "Figma & Adobe",
+  //     year: "2022",
+  //     color: "from-orange-400 to-red-400"
+  //   }
+  // ];
 
   return (
     <section id="formation" className="py-20">
@@ -81,13 +69,13 @@ export const Education: React.FC = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Formation & Certifications
+              Education
             </span>
           </h2>
 
           {/* Education Timeline */}
           <div className="max-w-4xl mx-auto mb-16">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">Parcours Académique</h3>
+            {/* <h3 className="text-2xl font-bold text-white mb-8 text-center">Parcours Académique</h3> */}
             
             {education.map((edu, index) => (
               <motion.div
@@ -130,7 +118,7 @@ export const Education: React.FC = () => {
                         </div>
                       </div>
                     </div>
-
+{/* 
                     <div className="space-y-3 mb-6">
                       {edu.achievements.map((achievement, achievementIndex) => (
                         <div key={achievementIndex} className="flex items-start space-x-3">
@@ -138,9 +126,9 @@ export const Education: React.FC = () => {
                           <span className="text-gray-300 leading-relaxed">{achievement}</span>
                         </div>
                       ))}
-                    </div>
+                    </div> */}
 
-                    <div className="flex flex-wrap gap-2">
+                    {/* <div className="flex flex-wrap gap-2">
                       {edu.skills.map((skill) => (
                         <span
                           key={skill}
@@ -149,7 +137,7 @@ export const Education: React.FC = () => {
                           {skill}
                         </span>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </motion.div>
@@ -157,7 +145,7 @@ export const Education: React.FC = () => {
           </div>
 
           {/* Certifications */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -187,7 +175,7 @@ export const Education: React.FC = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

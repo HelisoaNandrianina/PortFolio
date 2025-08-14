@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
     { href: '#apropos', label: 'À propos' },
     { href: '#competences', label: 'Compétences' },
     { href: '#experience', label: 'Expérience' },
-    { href: '#formation', label: 'Formation' },
+    { href: '#formation', label: 'Education' },
     { href: '#projets', label: 'Projets' },
     { href: '#contact', label: 'Contact' }
   ];
