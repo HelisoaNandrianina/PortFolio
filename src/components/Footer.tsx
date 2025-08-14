@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               Nandrianina Radimimanana
             </h3>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Développeur Full-Stack passionnée, créant des solutions numériques innovantes à Madagascar
+              Développeur Mobile & Web Full-Stack
             </p>
           </motion.div>
 
@@ -40,20 +40,13 @@ export const Footer: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-gray-800"
+            className="flex items-center justify-center pt-8 border-t border-gray-800"
           >
-            <p className="text-gray-500 text-sm mb-4 sm:mb-0">
-              © 2024 Nandrianina Radimimanana. Tous droits réservés.
+            <p className="text-gray-500 text-sm text-center">
+              © 2025 Nandrianina Radimimanana. Tous droits réservés.
             </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors duration-300 text-sm">
-                Mentions légales
-              </a>
-              <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors duration-300 text-sm">
-                Confidentialité
-              </a>
-            </div>
           </motion.div>
+
         </div>
       </div>
     </footer>
