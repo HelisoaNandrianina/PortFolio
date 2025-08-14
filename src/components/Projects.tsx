@@ -22,7 +22,7 @@ export const Projects: React.FC = () => {
     {
       title: "M-APP-AHAY",
       description: "Application mobile de révision scolaire avec système de quiz interactifs",
-      image: "../../assets/logo/logomappahay.png",
+      image: "../../assets/logo/mappahay.png",
       technologies: ["JavaScript", "PWA", "LocalStorage","HTML","CSS"],
       category: ["Mobile", "PWA"],
       features: ["Quiz interactifs", "Offline"],
@@ -31,7 +31,7 @@ export const Projects: React.FC = () => {
     {
       title: "Dôla - Jeux Malgaches",
       description: "Plateforme web dédiée aux jeux traditionnels malgaches (Fanorona, Katro) avec multijoueur en ligne",
-      image: "../../assets/logo/logo_dola.jpg",
+      image: "../../assets/logo/logo_dola.png",
       technologies: ["JavaScript", "WebSocket", "HTML5", "CSS3"],
       category: ["Web", "Full-Stack"],
       features: ["Multijoueur", "Jeux traditionnels", "Real-time", "Responsive"],
@@ -68,10 +68,10 @@ export const Projects: React.FC = () => {
         "Admin Panel",
         "Espace Exposant"
       ],
-      color: "fr"
+      color: "from-yellow-500 to-orange-500"
     },
     {
-      title: "ITM  Platform",
+      title: "ITM Platform",
       description: "Plateforme complète comprenant une inscription, un back-office pour les administrateurs, et un espace exposant pour la gestion des commandes et des paiements.",
       image: "../../assets/logo/itm.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
@@ -136,15 +136,36 @@ export const Projects: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group bg-gray-900/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-300 hover:scale-105"
               >
-                <div className="relative overflow-hidden">
+                {/* Container image optimisé */}
+                <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden flex items-center justify-center">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="max-w-full max-h-full object-cover rounded-lg shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl"
+                    style={{
+                      width: 'auto',
+                      height: 'auto',
+                      maxWidth: '90%',
+                      maxHeight: '90%'
+                    }}
+                    onError={(e) => {
+                      // Fallback en cas d'erreur de chargement
+                      e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM2MzY2ZjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhODU1ZjciLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2cpIi8+PHRleHQgeD0iNTAlIiB5PSI0NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Qcm9qZXQ8L3RleHQ+PHRleHQgeD0iNTAlIiB5PSI2MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIG9wYWNpdHk9IjAuOCI+SW1hZ2UgdW5hdmFpbGFibGU8L3RleHQ+PC9zdmc+';
+                    }}
+                    loading="lazy"
                   />
+                  
+                  {/* Overlay gradient au hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  
+                  {/* Indicateur de catégorie */}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-black/50 backdrop-blur-sm text-white text-xs rounded-full">
+                      {project.category[0]}
+                    </span>
                   </div>
+                  
+
                 </div>
 
                 <div className="p-6">
@@ -152,12 +173,12 @@ export const Projects: React.FC = () => {
                     {project.title}
                   </h3>
                   
-                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
                     {project.description}
                   </p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.features.map((feature) => (
+                    {project.features.slice(0, 3).map((feature) => (
                       <span
                         key={feature}
                         className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-full"
@@ -165,10 +186,15 @@ export const Projects: React.FC = () => {
                         {feature}
                       </span>
                     ))}
+                    {project.features.length > 3 && (
+                      <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-full">
+                        +{project.features.length - 3}
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
                         className={`px-3 py-1 bg-gradient-to-r ${project.color} bg-opacity-20 border border-current rounded-full text-xs font-medium`}
@@ -180,6 +206,11 @@ export const Projects: React.FC = () => {
                         {tech}
                       </span>
                     ))}
+                    {project.technologies.length > 4 && (
+                      <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs font-medium">
+                        +{project.technologies.length - 4}
+                      </span>
+                    )}
                   </div>
                 </div>
               </motion.div>
