@@ -22,7 +22,7 @@ export const Education: React.FC = () => {
       institution: "Lycée Technique",
       degree: "Baccalauréat Scientifique",
       field: "Sciences et Technologies",
-      period: "2017 - 2020",
+      period: "2019 - 2021",
       location: "Madagascar",
       type: "Diplôme",
       skills: ["Mathématiques", "Sciences", "Logique", "Analyse"],
