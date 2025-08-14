@@ -18,7 +18,7 @@ export const Experience: React.FC = () => {
         "Développement de modules de paiement sécurisés",
         "Création d'applications web et mobile avec React et React Native",
         "Intégration avec PrestaShop et bases de données PostgreSQL",
-        "Développement des sites ITM & FIA&FIG pour inscription et réservation d'exposants",
+        "Développement des sites ITM & Madavision pour inscription et réservation d'exposants",
       ],
       technologies: ["React", "React Native", "Node.js", "PostgreSQL", "PrestaShop","EJS","Symfony","Figma","Adobe Illustrator","Photoshop","Symfony"],
       color: "from-blue-500 to-purple-500"
