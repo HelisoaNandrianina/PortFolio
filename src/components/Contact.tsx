@@ -1,51 +1,87 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Instagram, ExternalLink, Phone, Github, Linkedin } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+  // Vous pouvez modifier ces informations selon vos besoins
+  const whatsappNumber = "+261348371251"; 
+  const instagramHandle = "soa_kelyy"; 
+  const email = "hnradimimanana@gmail.com";
+  const number = "+261 32 31 048 64";
+  const github = "HelisoaNandrianina";
+  const linkdin = "Nandrianina Radimimanana";
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const contactMethods = [
+    {
+      icon: <MessageCircle className="w-8 h-8" />,
+      title: "WhatsApp",
+      description: "Envoyez-moi un message directement",
+      action: "Envoyer un message",
+      link: `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Bonjour, je souhaite discuter d'un projet avec vous.`,
+      gradient: "from-green-500 to-green-600",
+      hoverGradient: "from-green-600 to-green-700"
+    },
+    {
+      icon: <Instagram className="w-8 h-8" />,
+      title: "Instagram",
+      description: "Suivez-moi sur Instagram",
+      action: "Voir le profil",
+      link: `https://instagram.com/${instagramHandle}`,
+      gradient: "from-pink-500 to-purple-600",
+      hoverGradient: "from-pink-600 to-purple-700"
+    },
+    {
+      icon: <Mail className="w-8 h-8" />,
+      title: "Email",
+      description: "Envoyez-moi un email professionnel",
+      action: "Envoyer un email",
+      link: `mailto:${email}?subject=Demande de collaboration&body=Bonjour, j'aimerais discuter d'un projet avec vous.`,
+      gradient: "from-blue-500 to-blue-600",
+      hoverGradient: "from-blue-600 to-blue-700"
+    }
+  ];
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "hnradimimanana@gmail.com",
-      link: "mailto:hnradimimanana@gmail.com"
+      value: email,
+      link: `mailto:${email}`
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: "Téléphone",
-      value: "+261 32 31 048 64",
-      link: "tel:+261323104864"
+      title: "Numero Télephone",
+      value: number,
+      link: null
+    },
+    {
+      icon: <MessageCircle className="w-6 h-6" />,
+      title: "WhatsApp",
+      value: "+261 34 83 712 51",
+      link: `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`
+    },
+    {
+      icon: <Github className="w-6 h-6" />,
+      title: "Github",
+      value: github,
+      link: `https://github.com/HelisoaNandrianina`
+    },
+    {
+      icon: <Linkedin className="w-6 h-6" />,
+      title: "Linkedin",
+      value: linkdin,
+      link:  `https://www.linkedin.com/in/nandrianina-radimimanana`
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Localisation",
       value: "Madagascar",
       link: null
-    }
+    },
+    
   ];
 
   return (
@@ -63,31 +99,72 @@ export const Contact: React.FC = () => {
             </span>
           </h2>
 
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+          <div className="max-w-6xl mx-auto">
+            {/* Description */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-center mb-12"
+            >
+              <h3 className="text-2xl font-bold text-white mb-4">Travaillons ensemble</h3>
+              <p className="text-gray-400 leading-relaxed max-w-3xl mx-auto">
+                Vous avez un projet en tête ? Une idée à développer ? 
+                N'hésitez pas à me contacter via l'une des plateformes ci-dessous. 
+                Je serais ravie de vous accompagner dans la réalisation de vos projets numériques.
+              </p>
+            </motion.div>
+
+            {/* Contact Methods */}
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {contactMethods.map((method, index) => (
+                <motion.div
+                  key={method.title}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                  className="group"
+                >
+                  <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl text-center">
+                    <div className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${method.gradient} rounded-full mb-6 group-hover:shadow-lg transition-all duration-300`}>
+                      <div className="text-white">
+                        {method.icon}
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-white mb-3">{method.title}</h3>
+                    <p className="text-gray-400 mb-6 leading-relaxed">{method.description}</p>
+                    
+                    <a
+                      href={method.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center justify-center space-x-2 w-full bg-gradient-to-r ${method.gradient} hover:${method.hoverGradient} text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105`}
+                    >
+                      <span>{method.action}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
             {/* Contact Info */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700/30"
             >
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4">Travaillons ensemble</h3>
-                <p className="text-gray-400 leading-relaxed mb-8">
-                  Vous avez un projet en tête ? Une idée à développer ? 
-                  N'hésitez pas à me contacter pour discuter de vos besoins. 
-                  Je serais ravie de vous accompagner dans la réalisation de vos projets numériques.
-                </p>
-              </div>
-
-              <div className="space-y-6">
+              <h4 className="text-xl font-bold text-white mb-6 text-center">Informations de contact</h4>
+              <div className="grid md:grid-cols-3 gap-6">
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={info.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                    className="flex items-center space-x-4 p-4 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-colors duration-300"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                    transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
+                    className="flex items-center space-x-4 p-4 bg-gray-800/40 rounded-lg hover:bg-gray-800/60 transition-colors duration-300"
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                       <div className="text-white">
@@ -95,126 +172,23 @@ export const Contact: React.FC = () => {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-white font-medium">{info.title}</h4>
+                      <h5 className="text-white font-medium">{info.title}</h5>
                       {info.link ? (
                         <a
                           href={info.link}
-                          className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <span className="text-gray-400">{info.value}</span>
+                        <span className="text-gray-400 text-sm">{info.value}</span>
                       )}
                     </div>
                   </motion.div>
                 ))}
               </div>
-
-              <div className="pt-6">
-                <h4 className="text-white font-medium mb-4">Réseaux sociaux</h4>
-                <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
-                  >
-                    @soa_kelyy
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50"
-            >
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Nom complet
-                    </label>
-                    <div className="relative">
-                      <User className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full pl-12 pr-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300"
-                        placeholder="Votre nom"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Email
-                    </label>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full pl-12 pr-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300"
-                        placeholder="votre@email.com"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                    Sujet
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300"
-                    placeholder="Sujet de votre message"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <div className="relative">
-                    <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full pl-12 pr-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300 resize-none"
-                      placeholder="Décrivez votre projet ou votre demande..."
-                    />
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
-                >
-                  <Send className="w-5 h-5" />
-                  <span>Envoyer le message</span>
-                </button>
-              </form>
             </motion.div>
           </div>
         </motion.div>
