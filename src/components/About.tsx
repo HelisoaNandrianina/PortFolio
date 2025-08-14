@@ -73,7 +73,7 @@ export const About: React.FC = () => {
               className="space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Développeuse full-stack passionnée basée à Madagascar, je me spécialise dans la création 
+                Développeur full-stack passionnée basée à Madagascar, je me spécialise dans la création 
                 de solutions numériques innovantes et accessibles. Diplômée de l'ISPM, j'allie expertise 
                 technique et créativité pour donner vie à des projets web et mobile de qualité.
               </p>

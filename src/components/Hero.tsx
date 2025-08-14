@@ -10,6 +10,14 @@ export const Hero: React.FC = () => {
     }
   };
 
+  // Fonction pour télécharger le CV
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/CV_Nandrianina_Radimimanana.pdf';
+    link.download = 'CV-Nandrianina-Radimimanana.pdf';
+    link.click();
+  };
+
   return (
     <section id="accueil" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Animation */}
@@ -47,7 +55,7 @@ export const Hero: React.FC = () => {
           >
             <Code className="text-blue-400" size={24} />
             <h2 className="text-xl md:text-2xl text-gray-300">
-              Développeuse Mobile & Web Full-Stack | Community Manager
+              Développeur Mobile & Web Full-Stack | Community Manager
             </h2>
             <Smartphone className="text-purple-400" size={24} />
           </motion.div>
@@ -58,7 +66,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-400 mb-12 leading-relaxed"
           >
-            "Créer des solutions numériques innovantes et humaines."
+            "🚀 Let's build something great!"
           </motion.p>
 
           <motion.div
@@ -75,7 +83,10 @@ export const Hero: React.FC = () => {
               <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
             </button>
 
-            <button className="group border-2 border-gray-600 hover:border-blue-400 text-gray-300 hover:text-white px-8 py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+            <button 
+              onClick={downloadCV}
+              className="group border-2 border-gray-600 hover:border-blue-400 text-gray-300 hover:text-white px-8 py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
+            >
               <Download className="group-hover:animate-bounce" size={20} />
               <span>Télécharger le CV</span>
             </button>

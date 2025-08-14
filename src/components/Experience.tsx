@@ -9,7 +9,7 @@ export const Experience: React.FC = () => {
   const experiences = [
     {
       company: "Vanilla Pay International",
-      position: "Développeuse Full-Stack",
+      position: "Développeur Full-Stack",
       period: "2024 - Présent",
       location: "Madagascar",
       type: "CDI",

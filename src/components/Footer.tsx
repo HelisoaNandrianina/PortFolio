@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               Nandrianina Radimimanana
             </h3>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Développeuse Full-Stack passionnée, créant des solutions numériques innovantes à Madagascar
+              Développeur Full-Stack passionnée, créant des solutions numériques innovantes à Madagascar
             </p>
           </motion.div>
 

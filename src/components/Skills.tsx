@@ -17,7 +17,7 @@ export const Skills: React.FC = () => {
       icon: <Globe className="w-8 h-8" />,
       title: "Developpement Web",
       color: "from-purple-500 to-pink-500",
-      skills: ["ReactJS", "Tailwind CSS", "HTML", "CSS" ,"EJS","Symfony"]
+      skills: ["ReactJS", "Tailwind CSS", "HTML", "CSS" ,"EJS",]
     },
     {
       icon: <Settings className="w-8 h-8" />,
@@ -45,7 +45,7 @@ export const Skills: React.FC = () => {
     },
     {
       icon: <Wrench className="w-8 h-8" />,
-      title: "Outils de développement",
+      title: "Outils et environnements de travail",
       color: "from-gray-500 to-zinc-500",
       skills: ["Git", "GitLab", "VSCode", "Postman", "PgAdmin"]
     }

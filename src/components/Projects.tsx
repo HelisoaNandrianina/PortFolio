@@ -93,7 +93,7 @@ export const Projects: React.FC = () => {
       technologies: ["Symfony", "PHP", "API"],
       category: ["Web", "Mobile","Full-Stack"],
       type: "Expérience Professionnel",
-      features: ["Paiement sécurisé", "E-commerce", "API Integration", "Security"],
+      features: ["Paiement sécurisé", "API Integration", "Security"],
       color: "from-teal-500 to-green-500"
     }
   ];
