@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { GraduationCap, Calendar, MapPin, Award, BookOpen } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, BookOpen, Building, Hourglass } from 'lucide-react';
 
 export const Education: React.FC = () => {
   const ref = useRef(null);
@@ -9,9 +9,20 @@ export const Education: React.FC = () => {
   const education = [
     {
       institution: "Institut Supérieur Polytechnique de Madagascar",
+      degree: "Master en Informatique et Télécommunication",
+      field: "Parcours : Informatique de Gestion, Génie Logiciel et Intelligence Artificielle",
+      period: "2025-Présent",
+      location: "Antananarivo, Madagascar",
+      type: "En cours",
+      skills: ["JavaScript", "PHP", "Base de données", "Gestion de projet"],
+      color: "from-green-500 to-yellow-500",
+      icon: <Hourglass  className="w-6 h-6" />
+    },
+    {
+      institution: "Institut Supérieur Polytechnique de Madagascar",
       degree: "Licence en Informatique et Télécommunication",
       field: "Parcours : Informatique de Gestion, Génie Logiciel et Intelligence Artificielle",
-      period: "2021 - 2024",
+      period: "2024",
       location: "Antananarivo, Madagascar",
       type: "Diplôme",
       skills: ["JavaScript", "PHP", "Base de données", "Gestion de projet"],
@@ -19,10 +30,10 @@ export const Education: React.FC = () => {
       icon: <GraduationCap className="w-6 h-6" />
     },
     {
-      institution: "Lycée Technique",
+      institution: "Lycée Nanisana",
       degree: "Baccalauréat Scientifique",
-      field: "Sciences et Technologies",
-      period: "2019 - 2021",
+      field: "Serie D",
+      period: "2021",
       location: "Madagascar",
       type: "Diplôme",
       skills: ["Mathématiques", "Sciences", "Logique", "Analyse"],
@@ -30,33 +41,6 @@ export const Education: React.FC = () => {
       icon: <BookOpen className="w-6 h-6" />
     }
   ];
-
-  // const certifications = [
-  //   {
-  //     name: "React Development",
-  //     issuer: "Formation en ligne",
-  //     year: "2023",
-  //     color: "from-blue-400 to-cyan-400"
-  //   },
-  //   {
-  //     name: "Node.js & Express",
-  //     issuer: "Formation professionnelle",
-  //     year: "2023",
-  //     color: "from-green-400 to-emerald-400"
-  //   },
-  //   {
-  //     name: "React Native",
-  //     issuer: "Auto-formation",
-  //     year: "2024",
-  //     color: "from-purple-400 to-pink-400"
-  //   },
-  //   {
-  //     name: "UI/UX Design",
-  //     issuer: "Figma & Adobe",
-  //     year: "2022",
-  //     color: "from-orange-400 to-red-400"
-  //   }
-  // ];
 
   return (
     <section id="formation" className="py-20">
@@ -75,8 +59,6 @@ export const Education: React.FC = () => {
 
           {/* Education Timeline */}
           <div className="max-w-4xl mx-auto mb-16">
-            {/* <h3 className="text-2xl font-bold text-white mb-8 text-center">Parcours Académique</h3> */}
-            
             {education.map((edu, index) => (
               <motion.div
                 key={index}
@@ -114,68 +96,19 @@ export const Education: React.FC = () => {
                         <div className="flex items-center space-x-2 text-gray-400">
                           <MapPin className="w-4 h-4" />
                           <span>{edu.location}</span>
-                          <span className="px-2 py-1 bg-gray-700 rounded-full text-xs">{edu.type}</span>
+                        </div>
+                        <div className="flex justify-end">
+                          <span className="px-3 py-1 bg-gray-700 rounded-full text-xs text-gray-200 font-medium">
+                            {edu.type}
+                          </span>
                         </div>
                       </div>
                     </div>
-{/* 
-                    <div className="space-y-3 mb-6">
-                      {edu.achievements.map((achievement, achievementIndex) => (
-                        <div key={achievementIndex} className="flex items-start space-x-3">
-                          <Award className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-300 leading-relaxed">{achievement}</span>
-                        </div>
-                      ))}
-                    </div> */}
-
-                    {/* <div className="flex flex-wrap gap-2">
-                      {edu.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="px-3 py-1 bg-gray-700/50 border border-gray-600/50 rounded-full text-sm text-gray-300 font-medium"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div> */}
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {/* Certifications */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">Certifications & Formations Complémentaires</h3>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={cert.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 group hover:scale-105"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`w-3 h-3 bg-gradient-to-r ${cert.color} rounded-full`}></div>
-                    <span className="text-gray-400 text-sm font-medium">{cert.year}</span>
-                  </div>
-                  
-                  <h4 className="text-lg font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all duration-300">
-                    {cert.name}
-                  </h4>
-                  
-                  <p className="text-gray-400 text-sm">{cert.issuer}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div> */}
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Code, Palette, Database, Smartphone, Globe, Settings, Wrench } from 'lucide-react';
+import { Code, Palette, Database, Smartphone, Globe, Settings, Wrench, Table, Layers } from 'lucide-react';
 
 export const Skills: React.FC = () => {
   const ref = useRef(null);
@@ -35,7 +35,7 @@ export const Skills: React.FC = () => {
       icon: <Database className="w-8 h-8" />,
       title: "Bases de données",
       color: "from-indigo-500 to-blue-500",
-      skills: ["PostgreSQL", "MongoDB","Sequelize"]
+      skills: ["PostgreSQL", "MongoDB"]
     },
     {
       icon: <Palette className="w-8 h-8" />,
@@ -48,6 +48,12 @@ export const Skills: React.FC = () => {
       title: "Outils et environnements de travail",
       color: "from-gray-500 to-zinc-500",
       skills: ["Git", "GitLab", "VSCode", "Postman", "PgAdmin"]
+    },
+    {
+      icon: <Layers  className="w-8 h-8" />,
+      title: "ORM",
+      color: "from-green-500 to-yellow-500",
+      skills: ["Sequelize"]
     }
   ];
 
