@@ -18,7 +18,7 @@ export const Experience: React.FC = () => {
         "Développement de modules de paiement sécurisés",
         "Création d'applications web et mobile avec React et React Native",
         "Intégration avec PrestaShop et bases de données PostgreSQL",
-        "Développement des sites ITM & Madavision pour inscription et réservation d'exposants",
+        "Développement des sites ITM & Madavision pour inscription et réservation pour les exposants",
       ],
       technologies: ["React", "React Native", "Node.js", "PostgreSQL", "PrestaShop","EJS","Symfony","Figma","Adobe Illustrator","Photoshop","Symfony"],
       color: "from-blue-500 to-purple-500"
@@ -58,7 +58,7 @@ export const Experience: React.FC = () => {
       position: "Secrétaire de séance",
       period: "2022",
       location: "Madagascar",
-      type: "Stage",
+      type: "Freelance",
       achievements: [
         "Organisation et coordination de réunions importantes",
         "Rédaction de comptes-rendus et procès-verbaux",

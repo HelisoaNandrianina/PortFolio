@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-400 mb-12 leading-relaxed"
           >
-            "🚀 Let's build something great!"
+            "Let's build something great!"
           </motion.p>
 
           <motion.div
