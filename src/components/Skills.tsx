@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Code, Palette, Database, Smartphone, Globe, Settings, Wrench, Table, Layers } from 'lucide-react';
+import { Code, Palette, Database, Smartphone, Globe, Settings, Wrench, Layers } from 'lucide-react';
 
 export const Skills: React.FC = () => {
   const ref = useRef(null);
@@ -23,7 +23,7 @@ export const Skills: React.FC = () => {
       icon: <Settings className="w-8 h-8" />,
       title: "Back-end",
       color: "from-green-500 to-teal-500",
-      skills: ["Node.js", "ExpressJS", "Symfony", "API REST"]
+      skills: ["Node.js", "ExpressJS","Rust", "Symfony", "API REST"]
     },
     {
       icon: <Smartphone className="w-8 h-8" />,

@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
   // Fonction pour télécharger le CV
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/CV_Nandrianina_Radimimanana.pdf';
+    link.href = '/CV_Nandrianina_RADIMIMANANA.pdf';
     link.download = 'CV-Nandrianina-Radimimanana.pdf';
     link.click();
   };
